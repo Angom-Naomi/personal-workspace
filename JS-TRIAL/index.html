@@ -1,0 +1,57 @@
+<!--Document Object Model (DOM)
+    In summary, D- A Web page is a document. 
+                O - The DOM is an object-oriented representation of the web page. It is a tree of objects.
+                M - It has a structure / tree
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEBORAH</title>
+
+    <!--JS alert box-->
+    <script>    
+        window.alert( "Welcome to my web page.");
+    </script>
+</head>
+
+<!--DOM METHODS AND EVENTS-->
+<body>
+    <p>This is an interactive web page. Let's see how interactive it can get. Ready? </p>
+    
+    <!--onMouseOver and onMouseOut events-->
+    <p id="para" onmouseover="moveOver()" onmouseout="moveOff()">Try to hover over me with a cursor</p>
+        <script> 
+            function moveOver(){
+                document.getElementById("para").innerHTML=":) Gotcha!"; 
+                document.getElementById("para").style.color="white";
+
+            }
+            function moveOff(){
+                document.getElementById("para").innerHTML="Try to hover over me with a cursor";
+                document.getElementById("para").style.background="blue";
+
+            }
+        </script>
+
+        <!--onClick event using "this" keyword for the specific element-->
+    <button type="button" id="next" onclick="this.innerHTML='????Going somewhere????' ">Next</button>
+    <script> 
+        document.getElementById("next").style.background="cyan";
+        document.getElementById("next").style.fontFamily="Lobster";
+        //You can add more css styles like color, display, fontsize, fontStyle, etc
+    </script>
+
+    <!--onClick event using a function-->
+    <button id="submit" onclick="toSubmit()">Submit</button>
+    <script> 
+        function toSubmit(){
+            document.getElementById("submit").innerHTML="### Hope this works out well";
+            document.getElementById("submit").style.fontSize="30px";
+            document.getElementById("submit").style.fontStyle="italic";
+        }
+    </script>
+</body>
+</html>
